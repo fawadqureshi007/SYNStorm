@@ -1,0 +1,5 @@
+requests
+scapy
+colorama
+urllib3
+dnspython
