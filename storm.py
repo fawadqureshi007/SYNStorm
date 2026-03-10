@@ -65,26 +65,36 @@ to understand network stress testing techniques.
 
 Developer : h4cker_fawad
 """)
+[+] 1. DDOS Tools
+			                  """
+    for N, line in enumerate(x.split("\n")):
+        sys.stdout.write("\x1b[1;%dm%s%s\n" % (random.choice(colors), line, clear))
+        time.sleep(0.05)						  
+        
+clearScr()
+logo()
 
-# Main loop
-while True:
-    clearScr()
-    logo()
-    menu()
+luc = input("DDOS@ALEXXX:~# ")
+clearScr()
 
-    choice = input("SYNStorm@h4cker_fawad:~# ")
-
-    if choice == "1":
-        run_ddos()
-        input("\nPress Enter to return to menu...")
-    elif choice == "2":
-        clearScr()
-        info()
-        input("\nPress Enter to return to menu...")
-    elif choice == "3":
-        print("\nClosing SYNStorm...")
+class choices():
+    def ddos(self):
+        if system() == 'Linux':
+            os.system("cd files/ddos && chmod +x ddos.py && python3 ddos.py")
+        elif system() == 'Windows':
+            os.system('cd files\\ddos && python ddos.py')
+        else:
+            print("Unsupported OS!")
+    
+    def exitluc(self):
+        print('\033[97m\nClosing Lucille\nPlease Wait...\033[1;m')
         time.sleep(2)
         sys.exit()
-    else:
-        print("Invalid option!")
-        time.sleep(1)
+
+ch = choices()
+if luc == '1':
+    ch.ddos()
+elif luc.lower() in ['exit', 'quit', 'q']:
+    ch.exitluc()
+else:
+    print("Invalid Input!")
